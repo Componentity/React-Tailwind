@@ -75,7 +75,7 @@ function App() {
       <button className='bg-blue-500 rounded-sm p-4 text-white' onClick={() => openAlert()}>
         Open Alert
       </button>
-      <Tooltip label='Hovered Label'>
+      <Tooltip theme="primary" label='Hovered Label'>
         <div className='block'>
           <button>THi si button</button>
         </div>
