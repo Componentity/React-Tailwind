@@ -1,7 +1,31 @@
 {
-  "name": "reactcomponents",
+  "name": "@componentity/react-tailwind",
   "version": "0.1.0",
-  "private": true,
+  "description": "Dynamic components for Tailwindcss and ReactJS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Componentity/React-Tailwind"
+  },
+  "keywords": [
+    "react",
+    "tailwind",
+    "tailwindcss",
+    "package",
+    "components",
+    "framework",
+    "tailwind-framework",
+    "react-framework",
+    "react-tailwind",
+    "react-tailwindcss",
+    "react-tailwindjs",
+    "tailwindjs"
+  ],
+  "author": "componentity",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/componentity/react-tailwind/issues"
+  },
+  "homepage": "https://componentity.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
