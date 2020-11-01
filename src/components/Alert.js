@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 
 // **********************
@@ -16,7 +16,7 @@ import React, {useState, useEffect} from 'react'
 // **********************
 
 
-const Alert = ({message="No Content Alert!", theme="danger", type, timeout, position="relative", classes}) => {
+const Alert = ({message="No Content Alert!", isOpen, close, theme="danger", type, timeout, position="relative", classes}) => {
     let colorSchema = {}
 
     if(type === "simple"){
@@ -62,12 +62,6 @@ const Alert = ({message="No Content Alert!", theme="danger", type, timeout, posi
         'bottomLeft': 'm-10 fixed bottom-0 left-0'
     }
 
-    const [close,setClose] = useState(false);
-
-    const closeAlert = ()=>{
-        setClose(true);
-        console.log("alert closed");
-    }
     // ****************************
     // BUG - run only once please
     // ****************************
@@ -79,13 +73,13 @@ const Alert = ({message="No Content Alert!", theme="danger", type, timeout, posi
     //     }
     // }, [timeout]);
 
-    if (close) {
+    if (!isOpen) {
         return <></>;
     }else{
         return (
             <div className={`p-4 flex justify-between items-center ${classes} ${fixedPosition[position]} ${colorSchema[theme]}`}>
                 <span>{ message }</span>
-                <span className="ml-10 cursor-pointer" onClick={closeAlert}>
+                <span className="ml-10 cursor-pointer" onClick={()=>close()}>
                     <svg fill="currentColor" className="h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"/></g></g></svg>
                 </span>
             </div>
