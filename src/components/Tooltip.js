@@ -14,7 +14,10 @@ import React, { useState } from 'react'
 const Tooltip = ({ label, children, theme, classes }) => {
   const [isOpen, setIsOpen] = useState(false)
   const onHover = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(true);
+  }
+  const onMouseLeave = ()=>{
+    setIsOpen(false)
   }
 
   const themeBg = {
@@ -39,7 +42,7 @@ const Tooltip = ({ label, children, theme, classes }) => {
   return (
     <div
       onMouseOver={() => onHover()}
-      onMouseLeave={() => onHover()}
+      onMouseLeave={() => onMouseLeave()}
       className={'relative cursor-pointer'}
     >
       <div className={tooltipClasses}>{label}</div>
