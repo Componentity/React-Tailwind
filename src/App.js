@@ -3,17 +3,27 @@ import './App.css'
 import Alert from './components/Alert'
 import Modal from './components/Modal'
 import Tooltip from './components/Tooltip'
+import Drawer from './components/Drawer'
 
 function App() {
   const [modelOpen, setModelOpen] = useState(false)
   const [close, setClose] = useState(true)
+  const [drawer, setDrawer] = useState(false)
 
   const closeAlert = () => {
     setClose(true)
     console.log('alert closed')
   }
+  const closeDrawer = () => {
+    setDrawer(false)
+    console.log('Drawer closed')
+  }
   const openAlert = () => {
     setClose(false)
+    console.log('alert closed')
+  }
+  const openDrawer = () => {
+    setDrawer(true)
     console.log('alert closed')
   }
 
@@ -75,6 +85,12 @@ function App() {
       <button className='bg-blue-500 rounded-sm p-4 text-white' onClick={() => openAlert()}>
         Open Alert
       </button>
+      <button className='bg-blue-500 rounded-sm p-4 text-white' onClick={() => openDrawer()}>
+        Open Drawer
+      </button>
+      <Drawer placement="left" theme="success" isOpen={drawer} close={() => closeDrawer()}>
+        <p>This is drawer Content</p>
+      </Drawer>
       <Tooltip theme="primary" label='Hovered Label'>
         <div className='block'>
           <button>THi si button</button>
