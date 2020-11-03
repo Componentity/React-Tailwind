@@ -4,7 +4,7 @@ import React from 'react'
 //  Parameters
 
 // 1. optional
-//   a. classes(all TailwindCSS classes)
+//   a. classes(all TailwindCSS classes) =>rewrites all the classes
 //   c. position(top,bottom,left,right)
 //   d. theme(danger,warning,info,primary,light,secondary,success)
 
@@ -12,7 +12,7 @@ import React from 'react'
 //   a. children
 // **********************
 
-const Drawer = ({isOpen, position="right", close, theme="light", children}) => {
+const Drawer = ({isOpen, position="right", close, theme="light", classes, children}) => {
     const themeBg = {
         'danger': ` bg-red-500 text-white`,
         'warning': ` bg-yellow-400 text-white`,
@@ -23,7 +23,8 @@ const Drawer = ({isOpen, position="right", close, theme="light", children}) => {
         'light': ` bg-white`,
         'primary': ` bg-indigo-400 text-white`,
     }
-    let classes = themeBg[theme] + " fixed z-50 p-10 transform transition ease-in-out duration-500 sm:duration-700";
+    if(!classes){
+        classes = themeBg[theme] + " fixed z-50 p-10 transform transition ease-in-out duration-500 sm:duration-700";
     switch (position) {
         case "right":
             classes += ' top-0 bottom-0 right-0 ';
@@ -49,7 +50,7 @@ const Drawer = ({isOpen, position="right", close, theme="light", children}) => {
             classes += " translate-x-full";
         }
     }
-
+    }
         return (
             <div className={classes}>
                 <span className="absolute top-0 right-0 mb-5 ml-0 cursor-pointer transition rounded-sm ease-in-out duration-500 hover:bg-gray-900" onClick={()=>close()}>
