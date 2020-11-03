@@ -1,6 +1,18 @@
 import React from 'react'
 
-const Drawer = ({isOpen, placement="right", close, theme="light", children}) => {
+// **********************
+//  Parameters
+
+// 1. optional
+//   a. classes(all TailwindCSS classes)
+//   c. position(top,bottom,left,right)
+//   d. theme(danger,warning,info,primary,light,secondary,success)
+
+// 2. required
+//   a. children
+// **********************
+
+const Drawer = ({isOpen, position="right", close, theme="light", children}) => {
     const themeBg = {
         'danger': ` bg-red-500 text-white`,
         'warning': ` bg-yellow-400 text-white`,
@@ -12,7 +24,7 @@ const Drawer = ({isOpen, placement="right", close, theme="light", children}) => 
         'primary': ` bg-indigo-400 text-white`,
     }
     let classes = themeBg[theme] + " fixed z-50 p-10 transform transition ease-in-out duration-500 sm:duration-700";
-    switch (placement) {
+    switch (position) {
         case "right":
             classes += ' top-0 bottom-0 right-0 ';
             break;
@@ -31,7 +43,7 @@ const Drawer = ({isOpen, placement="right", close, theme="light", children}) => 
     }
 
     if(!isOpen){
-        if(placement === "left"){
+        if(position === "left"){
             classes += " -translate-x-full";
         }else{
             classes += " translate-x-full";
