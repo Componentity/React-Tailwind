@@ -15,6 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     2. Drawer.js
     3. Modal.js
     4. Tooltip.js
+    5. Collapse.js
 
 ## Package On NPM
 

@@ -44,10 +44,22 @@ const Drawer = ({isOpen, position="right", close, theme="light", classes, childr
     }
 
     if(!isOpen){
-        if(position === "left"){
-            classes += " -translate-x-full";
-        }else{
-            classes += " translate-x-full";
+        switch (position) {
+            case "left":
+                classes += ' -translate-x-full ';
+                break;
+            case "right":
+                classes += ' translate-x-full ';
+                break;
+            case "top":
+                classes += ' -translate-y-full ';
+                break;
+            case "bottom":
+                classes += ' translate-y-full ';
+                break;
+            default:
+                classes += ' -transition-x-full ';
+                break;
         }
     }
     }

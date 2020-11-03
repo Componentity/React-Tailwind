@@ -2,8 +2,8 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.8/tailwind.min.css');
 
 body {
-    font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }

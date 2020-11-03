@@ -4,11 +4,13 @@ import Alert from './components/Alert'
 import Modal from './components/Modal'
 import Tooltip from './components/Tooltip'
 import Drawer from './components/Drawer'
+import Collapse from './components/Collapse'
 
 function App() {
   const [modelOpen, setModelOpen] = useState(false)
   const [close, setClose] = useState(true)
   const [drawer, setDrawer] = useState(false)
+  const [collapse, setCollapse] = useState(false)
 
   const closeAlert = () => {
     setClose(true)
@@ -25,6 +27,10 @@ function App() {
   const openDrawer = () => {
     setDrawer(true)
     console.log('alert closed')
+  }
+  const toggleCollapse = () => {
+    setCollapse(!collapse)
+    console.log("collapse", collapse)
   }
 
   return (
@@ -88,7 +94,7 @@ function App() {
       <button className='bg-blue-500 rounded-sm p-4 text-white' onClick={() => openDrawer()}>
         Open Drawer
       </button>
-      <Drawer placement="left" theme="success" isOpen={drawer} close={() => closeDrawer()}>
+      <Drawer position="bottom" theme="success" isOpen={drawer} close={() => closeDrawer()}>
         <p>This is drawer Content</p>
       </Drawer>
       <Tooltip theme="primary" label='Hovered Label'>
@@ -96,6 +102,16 @@ function App() {
           <button>THi si button</button>
         </div>
       </Tooltip>
+
+      <button onClick={()=>toggleCollapse()} className="bg-red-500 p-2 rounded-sm text-white">Collapse Now</button>
+      <Collapse isOpen={collapse}>
+          <div className="bg-red-600 p-10 text-white">
+            This is collapse content
+          </div>
+      </Collapse>
+      <div className="bg-blue-400 p-10">
+        This is some dummy contnte
+      </div>
     </div>
   )
 }
