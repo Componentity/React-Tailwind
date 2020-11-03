@@ -9,6 +9,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Make sure to use only tailwind classes
 - Pull and Push to make sure you are synced with the latest changes
 
+## Completed Components
+
+    1. Alert.js
+    2. Drawer.js
+    3. Modal.js
+    4. Tooltip.js
+
 ## Package On NPM
 
 [@Componentity/react-tailwind](https://www.npmjs.com/package/@componentity/react-tailwind)
