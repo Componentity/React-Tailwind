@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     4. Tooltip.js
     5. Collapse.js
 
-## Package On NPM
+## Download Package On NPM
 
 [@Componentity/react-tailwind](https://www.npmjs.com/package/@componentity/react-tailwind)
 
