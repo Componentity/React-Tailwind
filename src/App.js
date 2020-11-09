@@ -76,6 +76,7 @@ function App() {
           </span>
           <span className='mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto'>
             <button
+              onClick={() => setModelOpen(false)}
               type='button'
               className='inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5'
             >
@@ -94,12 +95,12 @@ function App() {
       <button className='bg-blue-500 rounded-sm p-4 text-white' onClick={() => openDrawer()}>
         Open Drawer
       </button>
-      <Drawer position="bottom" theme="success" isOpen={drawer} close={() => closeDrawer()}>
+      <Drawer position="right" theme="success" isOpen={drawer} close={() => closeDrawer()}>
         <p>This is drawer Content</p>
       </Drawer>
       <Tooltip theme="primary" label='Hovered Label'>
         <div className='block'>
-          <button>THi si button</button>
+          <button>Hover for tooltip</button>
         </div>
       </Tooltip>
 
@@ -109,9 +110,6 @@ function App() {
             This is collapse content
           </div>
       </Collapse>
-      <div className="bg-blue-400 p-10">
-        This is some dummy contnte
-      </div>
     </div>
   )
 }
