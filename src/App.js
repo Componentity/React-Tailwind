@@ -5,6 +5,7 @@ import Modal from './components/Modal'
 import Tooltip from './components/Tooltip'
 import Drawer from './components/Drawer'
 import Collapse from './components/Collapse'
+import Badge from './components/Badge'
 
 function App() {
   const [modelOpen, setModelOpen] = useState(false)
@@ -126,6 +127,8 @@ function App() {
       <Collapse isOpen={collapse}>
         <div className="bg-red-600 p-10 text-white">This is collapse content</div>
       </Collapse>
+
+      <Badge theme="info" text="Profile"/>
     </div>
   )
 }
